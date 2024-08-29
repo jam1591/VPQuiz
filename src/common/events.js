@@ -17,6 +17,7 @@ export class EventHandler {
             li.addEventListener('click', () => {
                 const guess = DOM.selectText(li);
                 checkGuess(state, choices, li, guess);
+                DOM.replaceHTML(DOM.select(state.container, '#scorecard'), state.scorecard.print());
             });
         });
     };

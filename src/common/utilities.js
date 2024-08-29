@@ -55,15 +55,21 @@ export class ElementStyler {
     static fadeOut(selector) {
         DOM.selectAll(selector,'.fade').forEach(element => {
             element.classList.remove('fade-in-item')
-            element.style.opacity = 1;
             element.classList.add('fade-out-item');
         });
     };
 
     static fadeIn(selector) {
         DOM.selectAll(selector,'.fade').forEach(element => {
-            element.classList.remove('fade-out-item')
-            element.style.opacity = 0;
+            element.classList.remove('fade-out-item');
+            element.classList.add('fade-in-item');
+        });
+    };
+
+    static fadeInQuestion(selector) {
+        DOM.selectAll(selector,'.fade-question').forEach(element => {
+            element.classList.remove('fade-in-item');
+            element.offsetWidth;
             element.classList.add('fade-in-item');
         });
     };

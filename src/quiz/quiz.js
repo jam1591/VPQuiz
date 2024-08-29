@@ -38,7 +38,8 @@ export class Quiz {
         this.question = question;
         DOM.replaceText(DOM.select(this.container, '#title'), question.title);
         DOM.replaceHTML(DOM.select(this.container, '#choices'), htmlStructureQuestionChoices(question));
-        DOM.replaceHTML(DOM.select(this.container, '#scorecard'), this.scorecard.print());
+        ElementStyler.fadeInQuestion(DOM.select(this.container, '.light'));
+        ElementStyler.fadeInQuestion(DOM.select(this.container, '.dark'));
     };
 };
 
@@ -49,14 +50,14 @@ function right() {
 function htmlStructureDark(state) {
     return `
         <button id="back" class="btn-dark btn-pd-5 fade" >BACK</button>
-        <p id="title" class="title-medium fade">${state.question.title}</p>
+        <p id="title" class="title-medium fade fade-question">${state.question.title}</p>
         <p id="scorecard" class="font-medium fade">${state.scorecard.print()}</p>
     `;
 };
 
 function htmlStructureLight(state) {
     return `
-        <ul id="choices" class="list fade">
+        <ul id="choices" class="list fade fade-question">
             ${htmlStructureQuestionChoices(state.question)}
         </ul>
         <button id="reset" class="btn-light btn-pd-20 fade" >Next Question</button>
