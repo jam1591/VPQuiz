@@ -2,11 +2,6 @@ import { Category } from "./category/category.js";
 import { Quiz } from "./quiz/quiz.js";
 
 const CONTAINER = document.getElementById('container');
-const STATE = {
-    Quiz: "quiz",
-    Category: "category"
-};
-
 
 export class State {
     constructor() {

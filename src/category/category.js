@@ -5,8 +5,7 @@ import { EventHandler } from "../common/events.js";
 export class Category {
     constructor(container) {
         this.container = container;
-        this.categories = ['🦁 India', '🙄 General'];
-        this.selected = null;
+        this.categories = ['🦁 India', '🍺 England'];
         this.title = "Welcome to my Quiz! This is a random title I had to write to fill the space...";
         this.description = "by: Vaidotas Petraitis";
     };
